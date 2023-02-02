@@ -2,5 +2,6 @@
   "files.associations": {
     "*.hdl": "hack_hdl",
     "iostream": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "enabled"
 }
