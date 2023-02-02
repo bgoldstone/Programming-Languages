@@ -5,7 +5,7 @@ int main()
 {
     int a, b;
     printf("Please enter integer a:");
-    cin << a;
+    cin >> a;
 
     printf("\nPlease enter integer b:");
     scanf("%d", &b);
