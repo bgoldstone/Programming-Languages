@@ -5,5 +5,6 @@ using namespace std;
 int main()
 {
     Point p(3, 4);
-    printf("%d, %d", p.getX(), p.getY());
+    Point p2(4, 5);
+    printf("%f", p.distance(p2));
 }

@@ -10,5 +10,5 @@ public:
     int getY() const;
     void setX(int x);
     void setY(int y);
-    int dis(Point a);
+    double distance(Point a);
 };
