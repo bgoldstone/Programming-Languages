@@ -15,10 +15,10 @@ double Point::distance(Point a)
     return sqrt(pow((a.getX() - getX()), 2) + pow((a.getY() - getY()), 2));
 }
 
-// void Point::arrayOfPointers(Point a[])
-// {
-//     for (int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
-//     {
-//         printf("%d %d", a[i].getX(), a[i].getY());
-//     }
-// }
+void Point::arrayOfPointers(Point *a)
+{
+    for (int i = 0; i < sizeof(a) - 1; i++)
+    {
+        printf("%d %d\n", a[i].getX(), a[i].getY());
+    }
+}

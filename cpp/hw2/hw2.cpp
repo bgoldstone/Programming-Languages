@@ -69,15 +69,15 @@ void fileReader(string fileName)
 
 void checkPoints()
 {
-    // Point a = Point(0, 0);
-    // Point b = Point(3, 7);
-    // Point c = Point(2, 4);
-    // Point arrPointers[3];
-    // arrPointers[0] = a;
-    // arrPointers[1] = b;
-    // arrPointers[2] = c;
+    Point a = Point(0, 0);
+    Point b = Point(3, 7);
+    Point c = Point(2, 4);
+    Point arrPointers[3];
+    arrPointers[0] = a;
+    arrPointers[1] = b;
+    arrPointers[2] = c;
 
-    // c.arrayOfPointers(new Point[3]{a, b, c});
+    c.arrayOfPointers(new Point[3]{a, b, c});
 }
 int main()
 {
