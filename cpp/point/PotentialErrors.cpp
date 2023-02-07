@@ -1,9 +1,10 @@
-/** In class example 2/7/23 */
 #include "Point.h"
 #include <cstdio>
 #include <iostream>
 Point *create1(int x, int y);
 Point *create2(int x, int y);
+
+// Class example 2/7/23
 
 int main()
 {
