@@ -5,7 +5,7 @@
 #include <string>
 #include <map>
 #include <regex>
-#include "Point.h"
+#include "../point/Point.h"
 using namespace std;
 
 /**
@@ -61,7 +61,8 @@ void fileReader(string fileName)
 
     cout << "Number of Lines: " << numOfLine << endl;
     cout << "Number of Letters: " << numOfLetters << endl;
-    cout << "File Output" << "\n\n";
+    cout << "File Output"
+         << "\n\n";
     cout << file << endl;
     mapPrint(freq, numOfLetters);
 }
