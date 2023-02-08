@@ -16,5 +16,5 @@ public:
     void setX(int x);
     void setY(int y);
     double distance(Point a);
-    static void arrayOfPointers(Point *a);
+    static void printArrayOfPoints(Point *a);
 };

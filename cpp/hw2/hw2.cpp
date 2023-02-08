@@ -66,8 +66,11 @@ void fileReader(string fileName)
     cout << file << endl;
     mapPrint(freq, numOfLetters);
 }
-
-void checkPoints()
+/**
+ * @brief Prints an Array of Points
+ *
+ */
+void printPoints()
 {
     Point a = Point(0, 0);
     Point b = Point(3, 7);
@@ -77,8 +80,9 @@ void checkPoints()
     arrPointers[1] = b;
     arrPointers[2] = c;
 
-    c.arrayOfPointers(new Point[3]{a, b, c});
+    Point::printArrayOfPoints(new Point[3]{a, b, c});
 }
+
 int main()
 {
     string fileName = "";
@@ -86,6 +90,6 @@ int main()
     cin >> fileName;
     fileName += ".txt";
     fileReader(fileName);
-    checkPoints();
+    printPoints();
     return 0;
 }
