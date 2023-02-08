@@ -1,4 +1,8 @@
-// Rebecca and Ben, 12/5, Homework 2.
+/** Program 1 HW 2
+ * -------------------------------------
+ * Author: Ben Goldstone, Rebecca Zipper
+ * Date: February 10, 2023
+ */
 
 #include <iostream>
 #include <fstream>
@@ -75,12 +79,8 @@ void printPoints()
     Point a = Point(0, 0);
     Point b = Point(3, 7);
     Point c = Point(2, 4);
-    Point arrPointers[3];
-    arrPointers[0] = a;
-    arrPointers[1] = b;
-    arrPointers[2] = c;
-
-    Point::printArrayOfPoints(new Point[3]{a, b, c});
+    Point *arrPointers = new Point[3]{a, b, c};
+    Point::printArrayOfPoints(arrPointers);
 }
 
 int main()

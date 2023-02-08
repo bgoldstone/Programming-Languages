@@ -1,7 +1,7 @@
 #include "Point.h"
 #include <cmath>
 #include <iostream>
-using namespace std;
+#include <sstream>
 /** @brief Point Constructor
  @param x x point
  @param y y point */
@@ -21,7 +21,38 @@ void Point::setY(int y) { this->y = y; }
 double Point::distance(Point a)
 {
 
-    return sqrt(pow((a.getX() - getX()), 2) + pow((a.getY() - getY()), 2));
+    return sqrt(pow((a.getX() - x), 2) + pow((a.getY() - y), 2));
+}
+/**
+ * @brief Sets new x value using pointers.
+ *
+ * @param x x value to set.
+ */
+void Point::setXPointer(int *x)
+{
+    this->x = *x;
+}
+
+/**
+ * @brief Sets new y value using pointers.
+ *
+ * @param y y value to set.
+ */
+void Point::setYPointer(int *y)
+{
+    this->y = *y;
+}
+
+/**
+ * @brief Gets a string representation of a Point.
+ *
+ * @return string String representation of a Point.
+ */
+string Point::str()
+{
+    stringstream returnVal;
+    returnVal << "(" << x << ", " << y << ")";
+    return returnVal.str();
 }
 
 /**
@@ -37,12 +68,11 @@ void Point::printArrayOfPoints(Point *a)
         // if not last point...
         if (sizeof(a) - 2 != i)
         {
-
-            printf("(%d, %d), ", a[i].getX(), a[i].getY());
+            cout << a[i].str() << ", ";
         }
         else
         {
-            printf("(%d, %d)]\n", a[i].getX(), a[i].getY());
+            cout << a[i].str() << "]\n";
         }
     }
 }

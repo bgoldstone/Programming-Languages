@@ -1,4 +1,4 @@
-#include "Point.h"
+#include "..\point\Point.h"
 #include <cstdio>
 #include <iostream>
 Point *create1(int x, int y);

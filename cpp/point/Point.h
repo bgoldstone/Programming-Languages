@@ -3,6 +3,8 @@
    #define Point
    #endif
 */
+#include <string>
+using namespace std;
 class Point
 {
 private:
@@ -15,6 +17,9 @@ public:
     int getY() const;
     void setX(int x);
     void setY(int y);
+    void setXPointer(int *x);
+    void setYPointer(int *y);
     double distance(Point a);
+    string str();
     static void printArrayOfPoints(Point *a);
 };
