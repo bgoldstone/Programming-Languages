@@ -5,6 +5,7 @@
  */
 #include "../point/Point.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
@@ -24,11 +25,13 @@ int main()
 
     // Creating Point Array.
     Point *pointArray = new Point[3]{*a, *b, *c};
+    Point origin = Point(0, 0);
+    string pointOrigin = origin.str();
 
     // Running loop over the points array
     for (int i = 0; i < sizeof(pointArray) - 1; i++)
     {
-        cout << "Point " << i + 1 << ": " << pointArray[i].str() << endl;
+        printf("Distance from %s to %s is %.2f\n", pointArray[i].str().c_str(), pointOrigin.c_str(), pointArray[i].distance(origin));
     }
 
     delete a;
