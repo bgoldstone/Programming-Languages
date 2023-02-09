@@ -22,7 +22,8 @@ void mapPrint(map<char, int> freq, int count)
 {
 
     cout << "\nLetter Breakdowns\n\n";
-    for (char key : "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    const string uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (char key : uppercaseLetters)
     {
         if (freq[key] != 0)
         {
