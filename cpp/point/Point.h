@@ -21,5 +21,7 @@ public:
     void setYPointer(int *y);
     double distance(Point a);
     string str();
+    bool operator==(const Point &) const;
+    Point operator+(const Point &) const;
     static void printArrayOfPoints(Point *a);
 };

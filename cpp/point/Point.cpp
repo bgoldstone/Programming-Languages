@@ -77,6 +77,28 @@ string Point::str()
     returnVal << "(" << x << ", " << y << ")";
     return returnVal.str();
 }
+/**
+ * @brief Compares two points
+ *
+ * @param p second point to compare
+ * @return true points are equal
+ * @return false points are not equal
+ */
+bool Point::operator==(const Point &p) const
+{
+    return (this->x == p.getX() && this->y == p.getY());
+}
+
+/**
+ * @brief adds two points together and returns new point
+ *
+ * @param p second point to be added
+ * @return Point* new Point that is added together
+ */
+Point Point::operator+(const Point &p) const
+{
+    return Point(this->x + p.getX(), this->y + p.getY());
+}
 
 /**
  * @brief Prints an array of points.
