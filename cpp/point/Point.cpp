@@ -6,11 +6,34 @@
  @param x x point
  @param y y point */
 Point::Point(int x, int y) : x(x), y(y) {}
-/// @brief Point Constructor no arguments
+/**
+ * @brief Empty Point constructor
+ *
+ */
 Point::Point() : x(0), y(0) {}
+/**
+ * @brief Gets the x coordinate of the point.
+ *
+ * @return int x coordinate of the point.
+ */
 int Point::getX() const { return x; }
+/**
+ * @brief Gets the y coordinate of the point.
+ *
+ * @return int y coordinate of the point.
+ */
 int Point::getY() const { return y; }
+/**
+ * @brief Sets the x coordinate of the point.
+ *
+ * @param x new x coordinate of the point.
+ */
 void Point::setX(int x) { this->x = x; }
+/**
+ * @brief Sets the y coordinate of the point.
+ *
+ * @param y new y coordinate of the point.
+ */
 void Point::setY(int y) { this->y = y; }
 /**
  * @brief Gets distance between this point and another point passed through
