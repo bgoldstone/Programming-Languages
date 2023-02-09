@@ -10,22 +10,24 @@ using namespace std;
 
 int main()
 {
-    Point *a = new Point(0, 0);
-    Point *b = new Point(2, 7);
-    Point *c = new Point(10, 36);
+    const int arrSize = 3;
+    Point *pointArray = new Point[arrSize];
+    pointArray[0] = Point(0, 0);
+    pointArray[1] = Point(2, 7);
+    pointArray[2] = Point(10, 36);
     int newX = 5;
     int *newXPointer = new int(6);
 
     // Modifing Points
-    a->setX(newX);
-    b->setXPointer(newXPointer);
-    cout << "Point a: " << a->str() << endl;
-    cout << "Point b: " << a->str() << endl;
-    cout << "Point c: " << c->str() << endl;
-    cout << "================================\nFor Loop:\n\n";
+    pointArray[0].setX(newX);
+    pointArray[1].setXPointer(newXPointer);
+    for (int i = 0; i < arrSize; i++)
+    {
+        printf("Point %d: %s\n", i, pointArray[i].str().c_str());
+    }
+    cout << "================================\nFor Loop:\n";
 
     // Creating Point Array.
-    Point *pointArray = new Point[3]{*a, *b, *c};
     Point origin = Point(0, 0);
     string pointOrigin = origin.str();
     // Running loop over the points array
@@ -34,10 +36,6 @@ int main()
         // When using printf statements, strings must be printed using stringVar.c_str() or stringVar.data()
         printf("Distance from %s to %s is %.2f\n", pointArray[i].str().c_str(), pointOrigin.c_str(), pointArray[i].distance(origin));
     }
-
-    delete a;
-    delete b;
-    delete c;
     delete[] pointArray;
     return 0;
 }
