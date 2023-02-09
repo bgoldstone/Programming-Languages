@@ -7,7 +7,7 @@
  @param y y point */
 Point::Point(int x, int y) : x(x), y(y) {}
 /// @brief Point Constructor no arguments
-Point::Point() {}
+Point::Point() : x(0), y(0) {}
 int Point::getX() const { return x; }
 int Point::getY() const { return y; }
 void Point::setX(int x) { this->x = x; }
