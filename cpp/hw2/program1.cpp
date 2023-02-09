@@ -8,7 +8,6 @@
 #include <fstream>
 #include <string>
 #include <map>
-#include <regex>
 #include "../point/Point.h"
 using namespace std;
 
