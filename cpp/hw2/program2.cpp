@@ -15,10 +15,11 @@ int main()
     Point *c = new Point(10, 36);
     int newX = 5;
     int *newXPointer = new int(6);
+
     // Modifing Points
     a->setX(newX);
-    cout << "Point a: " << a->str() << endl;
     b->setXPointer(newXPointer);
+    cout << "Point a: " << a->str() << endl;
     cout << "Point b: " << a->str() << endl;
     cout << "Point c: " << c->str() << endl;
     cout << "================================\nFor Loop:\n\n";
@@ -27,10 +28,10 @@ int main()
     Point *pointArray = new Point[3]{*a, *b, *c};
     Point origin = Point(0, 0);
     string pointOrigin = origin.str();
-
     // Running loop over the points array
     for (int i = 0; i < sizeof(pointArray) - 1; i++)
     {
+        // When using printf statements, strings must be printed using stringVar.c_str() or stringVar.data()
         printf("Distance from %s to %s is %.2f\n", pointArray[i].str().c_str(), pointOrigin.c_str(), pointArray[i].distance(origin));
     }
 
