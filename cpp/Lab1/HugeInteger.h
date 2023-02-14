@@ -9,4 +9,11 @@ private:
 
 public:
     HugeInteger();
+    HugeInteger(const HugeInteger &other);
+    bool operator==(const HugeInteger &other) const;
+    HugeInteger operator+(const HugeInteger &rightSide) const;
+    bool operator>(const HugeInteger &rightSide) const;
+    bool isZero() const;
+    string toString() const;
+    int size() const;
 };
