@@ -1,23 +1,63 @@
-#include <vector>
-using std::vector;
-#include <string>
-using std::string;
+#include <iostream>
 #include <sstream>
-using std::stringstream;
+#include <string>
+#include <vector>
 #include "HugeInteger.h"
+using namespace std;
 
+/// @brief Constructor function for HugeInteger Object.
 HugeInteger::HugeInteger()
 {
     this->data = new vector<int>();
     data->push_back(0);
 }
+/**
+ * @brief Copy Constructor for HugeInteger Object
+ *
+ * @param other object to copy.
+ */
 HugeInteger::HugeInteger(const HugeInteger &other)
 {
+    this->data = new vector<int>();
+    // Copy values of vector from other to this vector.
     for (auto i = other.data->begin(); i != other.data->end(); ++i)
     {
         data->push_back(*i);
     }
 }
+
+/**
+ * @brief Construct a new HugeInteger from a string object.
+ *
+ * @param str string object to convert to HugeInteger
+ */
+HugeInteger::HugeInteger(const string &str)
+{
+    this->data = new vector<int>();
+    for (int i = 0; i < str.size(); i++)
+    {
+        char c = str[i];
+        if (isdigit(c))
+            data->push_back((int)c);
+    }
+}
+/**
+ * @brief Delete the HugeInteger object
+ *
+ */
+HugeInteger::~HugeInteger()
+{
+    delete this->data;
+}
+// const HugeInteger HugeInteger::operator=(const HugeInteger &other) const
+// {
+//     if (this == &other)
+//         return *this;
+//     for (int i = 0; i < size(); i++)
+//     {
+//         data->push_back(other.data.at(i))
+//     }
+// }
 bool HugeInteger::operator==(const HugeInteger &other) const
 {
     if (other.data->size() != this->data->size())
@@ -29,7 +69,7 @@ bool HugeInteger::operator==(const HugeInteger &other) const
     }
     return true;
 }
-HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
+const HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
 {
     HugeInteger newData = HugeInteger();
     for (int i = 0; i < this->data->size(); i++)
@@ -51,6 +91,7 @@ bool HugeInteger::operator>(const HugeInteger &rightSide) const
     }
     return false;
 }
+
 bool HugeInteger::isZero() const
 {
     for (auto i = data->begin(); i < data->end(); i++)
@@ -63,12 +104,21 @@ bool HugeInteger::isZero() const
 string HugeInteger::toString() const
 {
     stringstream returnValue;
+    returnValue << "[";
     for (auto i = data->begin(); i < data->end(); i++)
     {
-        returnValue << *i;
+
+        returnValue << (char)*i << " ";
     }
+    returnValue << "]" << endl;
+
     return returnValue.str();
 }
+// void HugeInteger::setData(const string &str) const
+// {
+//     delete data;
+//     *this->data = new vector<int>();
+// }
 int HugeInteger::size() const
 {
     return this->data->empty();
