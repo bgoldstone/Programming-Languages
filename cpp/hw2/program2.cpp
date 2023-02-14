@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
     const int arrSize = 3;
-    Point *pointArray = new Point[arrSize];
+    Point *pointArray = new Point[arrSize]; 
     pointArray[0] = Point(0, 0);
     pointArray[1] = Point(2, 7);
     pointArray[2] = Point(10, 36);
