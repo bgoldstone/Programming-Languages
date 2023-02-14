@@ -11,6 +11,7 @@ HugeInteger::HugeInteger()
     this->data = new vector<int>();
     data->push_back(0);
 }
+
 /**
  * @brief Copy Constructor for HugeInteger Object
  *
@@ -41,6 +42,7 @@ HugeInteger::HugeInteger(const string &str)
             data->push_back((int)c);
     }
 }
+
 /**
  * @brief Delete the HugeInteger object
  *
@@ -58,6 +60,14 @@ HugeInteger::~HugeInteger()
 //         data->push_back(other.data.at(i))
 //     }
 // }
+
+/**
+ * @brief Checks for equality between two HugeInteger objects.
+ *
+ * @param other Other HugeInteger object to compare.
+ * @return true if equal.
+ * @return false if not equal.
+ */
 bool HugeInteger::operator==(const HugeInteger &other) const
 {
     if (other.data->size() != this->data->size())
@@ -69,6 +79,13 @@ bool HugeInteger::operator==(const HugeInteger &other) const
     }
     return true;
 }
+
+/**
+ * @brief Adds two HugeIntegers together.
+ *
+ * @param rightSide other HugeInteger to add.
+ * @return const HugeInteger HugeInteger added.
+ */
 const HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
 {
     HugeInteger newData = HugeInteger();
@@ -80,8 +97,18 @@ const HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
     }
     return newData;
 }
+
+/**
+ * @brief Checks if the left HugeInteger is bigger than the right.
+ *
+ * @param rightSide right HugeInteger to check.
+ * @return true if greater than.
+ * @return false if not greater than.
+ */
 bool HugeInteger::operator>(const HugeInteger &rightSide) const
 {
+    if (data->size() > rightSide.data->size())
+        return true;
     for (int i = this->data->size(); i > 0; i--)
     {
         int left = *this->data[i].data();
@@ -92,6 +119,12 @@ bool HugeInteger::operator>(const HugeInteger &rightSide) const
     return false;
 }
 
+/**
+ * @brief Checks if this HugeInteger is equal to zero.
+ *
+ * @return true if equal to zero
+ * @return false if not equal to zero
+ */
 bool HugeInteger::isZero() const
 {
     for (auto i = data->begin(); i < data->end(); i++)
@@ -101,6 +134,12 @@ bool HugeInteger::isZero() const
     }
     return true;
 }
+
+/**
+ * @brief Converts a HugeInteger into a string.
+ *
+ * @return string string representation of HugeInteger.
+ */
 string HugeInteger::toString() const
 {
     stringstream returnValue;
@@ -119,6 +158,12 @@ string HugeInteger::toString() const
 //     delete data;
 //     *this->data = new vector<int>();
 // }
+
+/**
+ * @brief Returns the size of a HugeInteger.
+ *
+ * @return int HugeInteger size.
+ */
 int HugeInteger::size() const
 {
     return this->data->empty();
