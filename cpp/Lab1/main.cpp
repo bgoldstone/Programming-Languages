@@ -23,13 +23,13 @@ int main()
     HugeInteger h6 = h5;
     bool b1 = h1 > h2;
 
-    printf("h1: %s\n", h1.toString().c_str());
-    printf("h2: %s\n", h2.toString().c_str());
-    printf("h3: %s\n", h3.toString().c_str());
-    printf("h4: %s\n", h4.toString().c_str());
-    printf("h5: %s\n", h5.toString().c_str());
-    printf("h6: %s\n", h6.toString().c_str());
-    string b1Str = b1 == 1 ? "True" : "False";
-    printf("%s is greater than %s : %s\n", h1.toString().c_str(), h2.toString().c_str(), b1Str.c_str());
+    printf("h1: %s\n", h1.toString());
+    printf("h2: %s\n", h2.toString());
+    printf("h3: %s\n", h3.toString());
+    printf("h4: %s\n", h4.toString());
+    printf("h5: %s\n", h5.toString());
+    printf("h6: %s\n", h6.toString());
+    const char *b1Str = b1 == 1 ? "True" : "False";
+    printf("%s is greater than %s : %s\n", h1.toString(), h2.toString(), b1Str);
     return 0;
 }

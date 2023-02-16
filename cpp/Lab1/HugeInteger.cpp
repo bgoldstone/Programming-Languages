@@ -96,7 +96,7 @@ bool HugeInteger::operator==(const HugeInteger &other) const
  */
 const HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
 {
-    long result = atoi(rightSide.toString().c_str()) + atoi(toString().c_str());
+    long result = atoi(rightSide.toString()) + atoi(toString());
     string added = to_string(result);
     return HugeInteger(added);
 }
@@ -143,9 +143,9 @@ bool HugeInteger::isZero() const
  *
  * @return string string representation of HugeInteger.
  */
-string HugeInteger::toString() const
+const char *HugeInteger::toString() const
 {
-    stringstream returnValue;
+    stringstream sstream;
     if (size() <= 1)
     {
         return "0";
@@ -153,10 +153,10 @@ string HugeInteger::toString() const
     for (auto i = data->begin(); i < data->end(); i++)
     {
 
-        returnValue << (char)*i << "";
+        sstream << (char)*i << "";
     }
-
-    return returnValue.str();
+    string returnValue = sstream.str();
+    return returnValue.c_str();
 }
 // void HugeInteger::setData(const string &str) const
 // {

@@ -17,7 +17,7 @@ public:
     const HugeInteger operator+(const HugeInteger &rightSide) const;
     bool operator>(const HugeInteger &rightSide) const;
     bool isZero() const;
-    string toString() const;
+    const char *toString() const;
     // void setData(const string &str) const;
     int size() const;
 };
