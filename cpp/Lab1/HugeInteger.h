@@ -18,6 +18,6 @@ public:
     bool operator>(const HugeInteger &rightSide) const;
     bool isZero() const;
     string toString() const;
-    void setData(const string &str) const;
+    // void setData(const string &str) const;
     int size() const;
 };

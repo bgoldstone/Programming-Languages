@@ -51,15 +51,23 @@ HugeInteger::~HugeInteger()
 {
     delete this->data;
 }
-// const HugeInteger HugeInteger::operator=(const HugeInteger &other) const
-// {
-//     if (this == &other)
-//         return *this;
-//     for (int i = 0; i < size(); i++)
-//     {
-//         data->push_back(other.data.at(i))
-//     }
-// }
+
+/**
+ * @brief Operator overloading for assignment operators.
+ *
+ * @param other HugeInteger object to be assigned.
+ * @return const HugeInteger HugeInteger object.
+ */
+const HugeInteger HugeInteger::operator=(const HugeInteger &other) const
+{
+    if (this == &other)
+        return *this;
+    for (int i = 0; i < size(); i++)
+    {
+        data->push_back(other.data->at(i));
+    }
+    return *this;
+}
 
 /**
  * @brief Checks for equality between two HugeInteger objects.
@@ -88,14 +96,9 @@ bool HugeInteger::operator==(const HugeInteger &other) const
  */
 const HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
 {
-    HugeInteger newData = HugeInteger();
-    for (int i = 0; i < this->data->size(); i++)
-    {
-        int left = *this->data[i].data();
-        int right = *rightSide.data[i].data();
-        newData.data->push_back(left + right);
-    }
-    return newData;
+    long result = atoi(rightSide.toString().c_str()) + atoi(toString().c_str());
+    string added = to_string(result);
+    return HugeInteger(added);
 }
 
 /**
@@ -107,14 +110,14 @@ const HugeInteger HugeInteger::operator+(const HugeInteger &rightSide) const
  */
 bool HugeInteger::operator>(const HugeInteger &rightSide) const
 {
-    if (data->size() > rightSide.data->size())
-        return true;
-    for (int i = this->data->size(); i > 0; i--)
+    int size = rightSide.size();
+    if (this->size() > rightSide.size())
+        size = this->size();
+    for (int i = size - 1; i >= 0; i--)
     {
-        int left = *this->data[i].data();
-        int right = *rightSide.data[i].data();
-        if (left > right)
-            return true;
+        if (i < rightSide.size() && i < this->size())
+            if (this->data->at(i) > rightSide.data->at(i))
+                return true;
     }
     return false;
 }
@@ -143,13 +146,15 @@ bool HugeInteger::isZero() const
 string HugeInteger::toString() const
 {
     stringstream returnValue;
-    returnValue << "[";
+    if (size() <= 1)
+    {
+        return "0";
+    }
     for (auto i = data->begin(); i < data->end(); i++)
     {
 
-        returnValue << (char)*i << " ";
+        returnValue << (char)*i << "";
     }
-    returnValue << "]" << endl;
 
     return returnValue.str();
 }
@@ -166,5 +171,5 @@ string HugeInteger::toString() const
  */
 int HugeInteger::size() const
 {
-    return this->data->empty();
+    return this->data->size();
 }
