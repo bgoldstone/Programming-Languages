@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'antlr'
+}
+
+// Change these to match your grammar, start symbol, and input file.
+ext {
+    grammarName = 'Simple'
+    startSymbol = 'assign'
+    inputFile = 'input.txt'
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.7.2"
+}
+
+task parseTree(dependsOn: compileJava, type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'org.antlr.v4.gui.TestRig'
+    args grammarName, startSymbol, '-gui', inputFile
+}
+
+task lexer( dependsOn: compileJava, type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'org.antlr.v4.gui.TestRig'
+    args grammarName, 'tokens', '-tokens', inputFile
+}
+
+repositories {
+    mavenCentral()
+}
+
+wrapper {
+    gradleVersion = '5.2.1'
+}
