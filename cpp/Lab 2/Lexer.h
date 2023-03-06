@@ -12,6 +12,12 @@ using std::string;
 // Character classes
 #define LETTER 0
 #define DIGIT 1
+#define STRING_LIT 40
+#define KEYWORD 50
+#define FLOAT_LIT 41
+#define PERIOD 61
+#define QUOTE 62
+#define SPACE 63
 #define UNKNOWN 99
 
 // Token codes
@@ -24,8 +30,15 @@ using std::string;
 #define DIV_OP 24
 #define LEFT_PAREN 25
 #define RIGHT_PAREN 26
+#define LEFT_CUR 27
+#define RIGHT_CUR 28
 
-class Lexer {
+// punctuation
+#define COMMA 60
+#define SEMICOLON 100
+
+class Lexer
+{
 
 private:
   string lexeme;
@@ -35,7 +48,7 @@ private:
   ifstream inputStream;
 
 public:
-  Lexer( const string & fileName );
+  Lexer(const string &fileName);
   ~Lexer();
 
   int lex();
