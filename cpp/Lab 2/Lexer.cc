@@ -161,7 +161,7 @@ int Lexer::lex()
       addChar();
       getChar();
     }
-    if (lexeme == "while" || lexeme == "void" || lexeme == "else" || lexeme == "return" || lexeme == "if" || lexeme == "break")
+    if (lexeme == "while" || lexeme == "void" || lexeme == "else" || lexeme == "return" || lexeme == "if" || lexeme == "break" || lexeme == "default" || lexeme == "for" || lexeme == "do" || lexeme == "switch" || lexeme == "case")
       nextToken = KEYWORD;
     else if (lexeme == ",")
       nextToken = COMMA;
