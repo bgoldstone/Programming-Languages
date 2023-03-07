@@ -5,8 +5,8 @@ plugins {
 
 // Change these to match your grammar, start symbol, and input file.
 ext {
-    grammarName = 'Ambiguous'
-    startSymbol = 'expr'
+    grammarName = 'Expression'
+    startSymbol = 'assign'
     inputFile = 'input.txt'
 }
 
