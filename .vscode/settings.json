@@ -53,5 +53,6 @@
     "fstream": "cpp",
     "sstream": "cpp"
   },
-  "C_Cpp.errorSquiggles": "enabled"
+  "C_Cpp.errorSquiggles": "enabled",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
