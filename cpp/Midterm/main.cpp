@@ -9,7 +9,6 @@ int play(vector<string> *words)
     int randIndex = rand() % words->size();
     string currentWord = words->at(randIndex);
     int score = 0;
-+
     return 0;
 }
 
