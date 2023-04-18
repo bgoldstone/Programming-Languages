@@ -51,7 +51,8 @@
     "ctime": "cpp",
     "map": "cpp",
     "fstream": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "complex": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabled",
   "java.configuration.updateBuildConfiguration": "interactive"

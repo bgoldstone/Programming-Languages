@@ -1,0 +1,156 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname InClass4623) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+
+(+ 3 2)
+(+ 4 6 8 3)
+(+ ( + 3 2) ( - 4 2))
+( + (+ (+ (+ 1 2) 3) 4) 5)
+( - (* ( + 5 6) 10) 5)
+(- (* 4 4) (* 6 10))
+(- (* 4 4) (* 6 1))
+(sqrt(* 5 10))
+(car'(apple orange banana))
+(car '((mickey minnie) (donald daisy) goofy))
+(list 'mickey 'minnie)
+(cdr '(coke sprike rootbeer milk))
+(list 'sprike 'rootbeer 'milk)
+(cdr '((strawberry chocolate) raspberry (lemon lime)))
+(list 'raspberry (list 'lemon 'lime))
+(cons 'racket '(scheme haskel ml))
+(list 'racket 'scheme 'haskel 'ml)
+(define (pikachu x y) (+ x y))
+(pikachu 3 4)
+; Inclass examples
+;1
+(define (inchCM inch) (* inch 2.54))
+(inchCM 5)
+;2
+(define (ftCM ft) (* ft 12 2.54))
+(ftCM 3)
+;3
+(define acc 12.6)
+(define (findSpeed timee) (* timee acc))
+(findSpeed 5)
+;4
+(define (height velocity timee) (* 0.5 timee velocity))
+(height 5 5)
+;5
+((lambda (a) (* a a a)) 8)
+;6
+; a(a(x))
+(define (twice a b) (a (a b) ) )
+(twice ftCM 1)
+((lambda (a b) (a (a b) ) ) ftCM 1)
+(twice(lambda (a) (* a a)) 7)
+;secondElement example
+(define (secondElement a) (car (cdr a)))
+(secondElement '(a b c))
+
+;list and cons
+(list '(a b c))
+(list 'a 'b 'c)
+(list '(a b) 'c)
+(list 'a)
+(list '())
+(list '(a b) '(c d))
+
+(cons 'a '(b c))
+(cons '(a b) '(c d))
+(cons 'a '())
+;(cons 'a 'b)
+;(cons '(a b) 'c)
+;(define (addOne a b) (cons (car '(a)) b))
+(define (addOne a b)
+  (if (list? a) 
+      (cons (car a) b)
+      (cons a b)
+      )
+  )
+(addOne 'a '(b c))
+(addOne '(a b) '(c d))
+(addOne '((a b) c) '(d e f))
+;if statements & functions
+(define (factorial n)
+  (if (<= n 1)
+      n
+      (* (factorial (- n 1)) n)
+      )
+  )
+(factorial 3)
+(define (pow x n)
+  (if (eqv? n 1)
+      x
+      (* x (pow x (- n 1))
+         )
+      )
+  )
+(pow 10 4)
+(define (myLength lst)
+  (if(null? lst)
+     0
+     (+ 1 (myLength(cdr lst)))
+     )
+  )
+(myLength '(a b c d e f g))
+(define (myAdd lst)
+  (if(null? lst)
+     0
+     (+ (car lst) (myAdd (cdr lst)))
+     )
+  )
+(myAdd '(1 2 3 4 5))
+(define (test a b)
+  (cond
+    ((= a b) (print "same"))
+    ((< a b) (print "smaller"))
+    ((> a b) (print "greater"))
+    )
+  )
+(test 1 1)
+
+(test 1 2)
+
+(test 2 1)
+
+(define (test2 a b)
+  (cond
+    ((equal? (car a) (car b)) (print "same"))
+    ((< a b) (print "smaller"))
+    ((> a b) (print "greater"))
+    )
+  )
+(define (square x) (* x x))
+
+(map square '(1 2 3 4 5))
+
+(define (f x) (+ x 2))
+(define (g x) (* 3 x))
+(define (combine a b) (lambda (x) (a (b x))))
+((combine f g) 3)
+;checks if atom in list
+(define (aMember? atm lst)
+  (cond
+    ;if list is null, atom not in list.
+    ((null? lst) #f)
+    ;if first element is equal to atim, atom is in list.
+    ((= (car lst) atm) #t)
+    ;if none of these contitions are true, run this.
+    ((not (= (car lst) atm)) (aMember? atm (cdr lst)))
+    )
+  )
+
+;counts occurences of an atom in a list.
+(define (countsimp atm list)
+  (cond
+    ;if end of list, return 0.
+    ((null? list) 0)
+    ; if atom in list, add one and recursive call.
+    ((= atm (car list))(+ 1 (countsimp atm (cdr list))))
+    ; if atom in list, add zero and recursive call.
+    ((not(= atm (car list)))(+ 0 (countsimp atm (cdr list))))
+    )
+  )
+(countsimp 1 '(1 1 2 1))
+(countsimp 2 '(1 1 2 1))
+(countsimp 0 '(1 1 2 1))
