@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Lab5" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/Lab5" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="../.vs/Lab 5/FileContentIndex/903649e2-0325-4009-b3f1-2bc2d307facc.vsidx" />
+		<Unit filename="../.vs/Lab 5/FileContentIndex/b8b0b8f9-e0ff-4579-833b-83f9ecbf7b85.vsidx" />
+		<Unit filename="../.vs/Lab 5/FileContentIndex/badac516-abf0-4caa-aad8-eb01c258e0d2.vsidx" />
+		<Unit filename="../.vs/Lab 5/FileContentIndex/ea771795-a8bb-486a-840e-4301fd41477b.vsidx" />
+		<Unit filename="../.vs/Lab 5/FileContentIndex/read.lock" />
+		<Unit filename="../.vs/Lab 5/v17/Browse.VC.db" />
+		<Unit filename="../.vs/Lab 5/v17/ipch/AutoPCH/b0213433d953c881/MAIN.ipch" />
+		<Unit filename="../.vs/Lab5/FileContentIndex/abccd6f5-1861-4df6-a013-e40c67bb6567.vsidx" />
+		<Unit filename="../.vs/Lab5/FileContentIndex/read.lock" />
+		<Unit filename="../.vs/Lab5/v17/Browse.VC.db" />
+		<Unit filename="../.vs/ProjectSettings.json" />
+		<Unit filename="../.vs/VSWorkspaceState.json" />
+		<Unit filename="../.vs/slnx.sqlite" />
+		<Unit filename="../.vs/tasks.vs.json" />
+		<Unit filename="../.vscode/settings.json" />
+		<Unit filename="../.vscode/tasks.json" />
+		<Unit filename="../CppProperties.json" />
+		<Unit filename="../Grammar.cpp" />
+		<Unit filename="../Grammar.h" />
+		<Unit filename="../Grammars/Army.g" />
+		<Unit filename="../Grammars/Bond.g" />
+		<Unit filename="../Grammars/Dear-John-letter.g" />
+		<Unit filename="../Grammars/Extension-request.g" />
+		<Unit filename="../Grammars/Personal-day.g" />
+		<Unit filename="../Grammars/Trump.g" />
+		<Unit filename="../Grammars/art.g" />
+		<Unit filename="../Grammars/death-simulator.g" />
+		<Unit filename="../Grammars/electrical.g" />
+		<Unit filename="../Grammars/lifeGame.g" />
+		<Unit filename="../Grammars/medieval.g" />
+		<Unit filename="../Grammars/mrBond.g" />
+		<Unit filename="../Grammars/mystery_story.g" />
+		<Unit filename="../Grammars/pirate.g" />
+		<Unit filename="../Grammars/recipe.g" />
+		<Unit filename="../Grammars/startrek.g" />
+		<Unit filename="../Lab5.sln" />
+		<Unit filename="../Lab5.vcxproj" />
+		<Unit filename="../Lab5.vcxproj.filters" />
+		<Unit filename="../Lab5.vcxproj.user" />
+		<Unit filename="../Main.cpp" />
+		<Unit filename="../RandomSentenceGenerator.cpp" />
+		<Unit filename="../RandomSentenceGenerator.h" />
+		<Unit filename="../a.exe" />
+		<Unit filename="../x64/Debug/Lab5.log" />
+		<Unit filename="../x64/Debug/Lab5.tlog/CL.command.1.tlog" />
+		<Unit filename="../x64/Debug/Lab5.tlog/Lab5.lastbuildstate" />
+		<Unit filename="../x64/Debug/Lab5.tlog/unsuccessfulbuild" />
+		<Unit filename="../x64/Debug/vc143.idb" />
+		<Unit filename="../x64/Debug/vc143.pdb" />
+		<Unit filename="main.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

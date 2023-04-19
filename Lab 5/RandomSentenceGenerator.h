@@ -7,7 +7,7 @@
 class RandomSentenceGenerator
 {
 private:
-    Grammar grammar;
+    Grammar *grammar;
 
 public:
     RandomSentenceGenerator(std::string file);

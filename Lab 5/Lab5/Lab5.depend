@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1681861464 source:c:\users\bgoldstone\development\programming-languages\lab 5\grammar.cpp
+	"Grammar.h"
+	<stdlib.h>
+	<time.h>
+	<iostream>
+
+1681857191 c:\users\bgoldstone\development\programming-languages\lab 5\grammar.h
+	<string>
+	<iostream>
+	<vector>
+	<map>
+
+1681862538 source:c:\users\bgoldstone\development\programming-languages\lab 5\main.cpp
+	<string>
+	<iostream>
+	"RandomSentenceGenerator.h"
+
+1681855635 c:\users\bgoldstone\development\programming-languages\lab 5\randomsentencegenerator.h
+	<string>
+	<iostream>
+	<vector>
+	"Grammar.h"
+	<map>
+
+1681861054 source:c:\users\bgoldstone\development\programming-languages\lab 5\randomsentencegenerator.cpp
+	"RandomSentenceGenerator.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1584205420 source:c:\users\bgoldstone\development\programming-languages\lab 5\lab5\main.cpp
+	<iostream>
+
