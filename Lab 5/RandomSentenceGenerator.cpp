@@ -1,19 +1,39 @@
+/**
+ * @file RandomSentenceGenerator.cpp
+ * @author Ben Goldstone (bgoldstone@muhlenberg.edu)
+ * @brief A program that generates random grammar from a given set of grammar.
+ * @version 0.1
+ * @date 2023-04-21
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 #include "RandomSentenceGenerator.h"
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+/**
+ * @brief Constructs a new Random Sentence Generator object
+ *
+ * @param file File to generate grammar with.
+ */
 RandomSentenceGenerator::RandomSentenceGenerator(std::string file)
 {
     this->grammar = new Grammar();
+
+    // input and string to store line.
     std::ifstream fileStream;
     std::string line;
     fileStream.clear();
     fileStream.open(file.c_str());
+    // if file is open.
     if (fileStream.is_open())
     {
         std::string nonTerminal;
         bool startProduction = false;
         bool endProduction = true;
+
+        // for each line in the file
         while (getline(fileStream, line))
         {
             // if start of new production
@@ -42,13 +62,24 @@ RandomSentenceGenerator::RandomSentenceGenerator(std::string file)
         fileStream.close();
     }
 }
+/**
+ * @brief Destructor for a Random Sentence Generator object
+ *
+ */
 RandomSentenceGenerator::~RandomSentenceGenerator()
 {
     delete this->grammar;
 }
+/**
+ * @brief Generates a random sentence from the grammar object.
+ *
+ * @return std::string random sentence.
+ */
 std::string RandomSentenceGenerator::randomSentence()
 {
     std::string sentence = grammar->getRandomRHS("<start>");
+
+    // while there are still non-terminals.
     while (sentence.find("<") != std::string::npos)
     {
         // gets nonterminal element
@@ -57,16 +88,22 @@ std::string RandomSentenceGenerator::randomSentence()
         std::string newGrammar = grammar->getRandomRHS(nonTerminal) + sentence.substr(sentence.find_first_of(">") + 1, sentence.size() - sentence.find_first_of(">"));
         sentence.replace(sentence.find_first_of("<"), sentence.size(), newGrammar);
     }
+
     if (sentence.find(">") != std::string::npos)
     {
         sentence.replace(sentence.find_first_of(">"), 1, "");
     }
+    // remvoe semicolons.
     if (sentence.find(";") != std::string::npos)
     {
         sentence.replace(sentence.find_first_of(";"), 1, "");
     }
     return sentence;
 }
+/**
+ * @brief Prints grammar to the stdout stream.
+ *
+ */
 void RandomSentenceGenerator::printGrammar()
 {
     std::cout << *this->grammar;

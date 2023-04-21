@@ -6,6 +6,7 @@
 class Grammar
 {
 private:
+    // map of all non-terminals to a vector of terminals.
     std::map<std::string, std::vector<std::string>> *nonTerminals;
 
 public:
