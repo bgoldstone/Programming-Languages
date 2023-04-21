@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "*.hdl": "hack_hdl",
+    "*.g": "plaintext",
     "array": "cpp",
     "atomic": "cpp",
     "*.tcc": "cpp",
@@ -42,6 +43,10 @@
     "sstream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "bitset": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "regex": "cpp"
   }
 }

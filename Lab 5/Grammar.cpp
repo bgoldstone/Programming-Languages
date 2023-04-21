@@ -1,7 +1,6 @@
 #include "Grammar.h"
 #include <stdlib.h>
 #include <time.h>
-#include <iostream>
 
 /// @brief Constructor for Grammar object.
 Grammar::Grammar()
@@ -40,7 +39,6 @@ void Grammar::addProduction(std::string nonTerm, std::string rhs)
 std::string Grammar::getRandomRHS(std::string nonTerm) const
 {
     std::vector<std::string> rhs = this->nonTerminals->at(nonTerm);
-
     return rhs.at(rand() % rhs.size());
 }
 
@@ -60,8 +58,13 @@ std::ostream &operator<<(std::ostream &out, const Grammar &g)
 {
     std::map<std::string, std::vector<std::string>> *nonTerms = g.nonTerminals;
 
-    out << "Grammar: \n";
+    out << "Grammar: \nNon Terminals: ";
     // for each non-terminal
+    for (auto it = nonTerms->begin(); it != nonTerms->end(); it++)
+    {
+        out << it->first << " ";
+    }
+    out << "\b\n";
     for (auto it = nonTerms->begin(); it != nonTerms->end(); it++)
     {
         out << "\t" << it->first << ": ";
