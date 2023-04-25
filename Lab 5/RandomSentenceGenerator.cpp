@@ -56,7 +56,13 @@ RandomSentenceGenerator::RandomSentenceGenerator(std::string file)
                 line = line.c_str();
                 // Remove Whitespace
                 nonTerminal.erase(std::remove_if(nonTerminal.begin(), nonTerminal.end(), isspace), nonTerminal.end());
-                grammar->addProduction(nonTerminal, line.substr(0, line.find(";")));
+
+                // Removes last and first spaces.
+                line = line.substr(0, line.find(";"));
+                int first = line.find_first_not_of(' ');
+                int last = line.find_last_not_of(' ');
+                line = line.substr(first, last - first + 1);
+                grammar->addProduction(nonTerminal, line);
             }
         }
         fileStream.close();
